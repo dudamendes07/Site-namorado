@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o meu amor ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e0f7fa;
+            color: #003366;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #2196f3;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #0d47a1;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery div {
+            width: 150px;
+            height: 150px;
+            background: #bbdefb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #0d47a1;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 0, 0, 0.6);
+            font-size: 24px;
+            animation: float 6s infinite ease-in;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh) rotate(0deg); }
+            to { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<header>
+    <h1>Para o meu amor ❤️</h1>
+</header>
+
+<section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>Espaço para escrever a nossa história linda... ✨</p>
+</section>
+
+<section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery">
+        <div>Foto 1</div>
+        <div>Foto 2</div>
+        <div>Foto 3</div>
+        <div>Foto 4</div>
+    </div>
+</section>
+
+<section id="declaracao">
+    <h2>Declaração de Amor</h2>
+    <p>
+        Meu amor, cada momento ao seu lado é uma lembrança que guardo com carinho no meu coração. 
+        Você é minha escolha todos os dias, meu melhor amigo, meu abrigo, meu namorado e meu futuro marido, 
+        a pessoa a qual escolhi e escolho todos os dias. Te amo infinitamente, vida.
+    </p>
+</section>
+
+<section id="linha-do-tempo">
+    <h2>Linha do Tempo</h2>
+    <ul>
+        <li>15/02/2025 - Nossa primeira conversa ❤️</li>
+        <li>22/03/2025 - Nossa 1° vez 💙</li>
+        <li>09/05/2025 - Começo do namoro 💫</li>
+    </ul>
+</section>
+
+<section id="musica">
+    <h2>Música: Inevitável</h2>
+    <button onclick="document.getElementById('audio').play()">▶️ Tocar Música</button>
+    <audio id="audio" controls>
+        <source src="URL_DA_MUSICA.mp3" type="audio/mpeg">
+        Seu navegador não suporta o áudio.
+    </audio>
+</section>
+
+<script>
+    // Criar corações flutuando
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+        heart.textContent = '❤️';
+        document.getElementById('hearts').appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
